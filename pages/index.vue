@@ -1,22 +1,20 @@
 <template>
 
   <v-container class="grey lighten-5">
-    <v-row>
-      <v-col cols="12">
-        <v-row
 
-          no-gutters
+    <v-row v-for="n in 2"
+           :key="n"
+           class="mb-6"
+           no-gutters
+    >
+      <v-col
+        v-for="n in 5"
+        :key="n"
+        class="mb-6"
+
+        <card
         >
-          <card
-            v-for="n in 3"
-            :key="n"
-            class="ma-3 pa-6"
-            outlined
-            tile
-          >
-            Column
-          </card>
-        </v-row>
+        </card>
       </v-col>
 
     </v-row>
@@ -27,6 +25,7 @@
 import Logo from '~/components/Logo.vue'
 import VuetifyLogo from '~/components/VuetifyLogo.vue'
 import card from '~/components/card.vue'
+
 export default {
   components: {
     Logo,
