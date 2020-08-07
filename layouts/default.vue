@@ -29,7 +29,7 @@
           >
             <v-list-item-avatar>
               <img
-                :src="`https://randomuser.me/api/portraits/men/${item.picture}.jpg`"
+                :src=item.picture
                 alt=""
               >
             </v-list-item-avatar>
@@ -77,7 +77,7 @@
       >
         <v-text-field
           :append-icon-cb="() => {}"
-          placeholder="Search..."
+          placeholder="搜索. . ."
           single-line
           append-icon="mdi-magnify"
           color="white"
@@ -87,9 +87,7 @@
     </v-app-bar>
 
     <v-main>
-      <v-container class="fill-height">
      <nuxt></nuxt>
-      </v-container>
     </v-main>
   </v-app>
 </template>
@@ -109,11 +107,11 @@ export default {
       { icon: 'mdi-clock', text: 'Watch Later' },
     ],
     items2: [
-      { picture: 28, text: 'Joseph' },
-      { picture: 38, text: 'Apple' },
-      { picture: 48, text: 'Xbox Ahoy' },
-      { picture: 58, text: 'Nokia' },
-      { picture: 78, text: 'MKBHD' },
+      { picture: 'https://i0.hdslb.com/bfs/tag/5f42290e9299eceb7dfce4b932b497d1255ea847.jpg@75w_75h_1c_100q.webp', text: '动漫' },
+      { picture: 'https://i0.hdslb.com/bfs/archive/4afb90b88597f226d22fdaed28a5c4769b372fdc.png@75w_75h_1c_100q.webp', text: '日剧' },
+      { picture: 'https://i0.hdslb.com/bfs/tag/9e5e70fba1281cc421d2d7f1d205f510b53f90a3.png@60w_60h_1c_100q.webp', text: '电影' },
+      // { picture: 58, text: 'Nokia' },
+      // { picture: 78, text: 'MKBHD' },
     ],
   }),
   created () {
