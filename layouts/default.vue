@@ -8,14 +8,17 @@
       <v-list dense>
         <v-list-item
           v-for="item in items"
+:to="item.path"
           :key="item.text"
           link
         >
           <v-list-item-action>
             <v-icon>{{ item.icon }}</v-icon>
           </v-list-item-action>
+
           <v-list-item-content>
-            <v-list-item-title>
+            <v-list-item-title class="text-subtitle-2 ">
+
               {{ item.text }}
             </v-list-item-title>
           </v-list-item-content>
@@ -23,7 +26,9 @@
         <v-subheader class="mt-4 grey--text text--darken-1">热门分类</v-subheader>
         <v-list>
           <v-list-item
+
             v-for="item in items2"
+            :to="item.path"
             :key="item.text"
             link
           >
@@ -49,6 +54,8 @@
       dense
     >
       <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
+
+
       <v-icon
         class="mx-4"
         large
@@ -88,24 +95,28 @@ export default {
   data: () => ({
     drawer: null,
     items: [
-      {icon: 'mdi-trending-up', text: 'Most Popular'},
-      {icon: 'mdi-youtube-subscription', text: 'Subscriptions'},
-      {icon: 'mdi-history', text: 'History'},
-      {icon: 'mdi-playlist-play', text: 'Playlists'},
-      {icon: 'mdi-clock', text: 'Watch Later'},
+      {icon: 'mdi-trending-up', text: '热播',path:"/popular"},
+
+      {icon: 'mdi-history', text: '看过',path:"history"},
+
     ],
     items2: [
       {
         picture: 'https://i0.hdslb.com/bfs/tag/5f42290e9299eceb7dfce4b932b497d1255ea847.jpg@75w_75h_1c_100q.webp',
-        text: '动漫'
+        text: '动漫',
+        path: "/vlist/anime"
       },
       {
         picture: 'https://i0.hdslb.com/bfs/archive/4afb90b88597f226d22fdaed28a5c4769b372fdc.png@75w_75h_1c_100q.webp',
-        text: '日剧'
+        text: '日剧',
+        path: "/vlist/jptv"
+
       },
       {
         picture: 'https://i0.hdslb.com/bfs/tag/9e5e70fba1281cc421d2d7f1d205f510b53f90a3.png@60w_60h_1c_100q.webp',
-        text: '电影'
+        text: '电影',
+
+        path: "/vlist/movie",
       },
       // { picture: 58, text: 'Nokia' },
       // { picture: 78, text: 'MKBHD' },

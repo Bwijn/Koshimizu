@@ -1,5 +1,6 @@
 <template>
   <v-card
+:to="yyy"
     max-width="200"
 
     class="ma-auto"
@@ -13,7 +14,7 @@
     </v-list-item>
 
     <v-img
-      src="https://img9.doubanio.com/view/photo/s_ratio_poster/public/p2610225002.webp"
+      src="https://www.yunbtv.com/upload/vod/20200720-1/7a6d8eff7a62cb51e287aabd308b7ded.jpg"
       height="192"
     ></v-img>
 
@@ -27,6 +28,7 @@
 <script>
 
 export default {
-  name:'card'
+  name:'card',
+  props:["yyy"]
 }
 </script>

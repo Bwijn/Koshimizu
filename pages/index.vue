@@ -10,11 +10,13 @@
       <v-col
         v-for="n in 5"
         :key="n"
-        class="mb-6"
+        class="mb-6">
 
         <card
+:yyy="yyy"
         >
         </card>
+
       </v-col>
 
     </v-row>
@@ -27,6 +29,11 @@ import VuetifyLogo from '~/components/VuetifyLogo.vue'
 import card from '~/components/card.vue'
 
 export default {
+  data(){
+    return{
+      yyy:"/voddetail"
+    }
+  },
   components: {
     Logo,
     VuetifyLogo,
