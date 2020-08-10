@@ -8,7 +8,7 @@
       <v-list dense>
         <v-list-item
           v-for="item in items"
-:to="item.path"
+          :to="item.path"
           :key="item.text"
           link
         >
@@ -56,16 +56,25 @@
       <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
 
 
-      <v-icon
-        class="mx-4"
-        large
-      >
-        mdi-youtube
-      </v-icon>
-      <v-toolbar-title class="mr-12 white--text align-center">
-        <span class="title">Ami</span>
+      <nuxt-link to="/">
+        <v-icon
+          class="mx-4"
+          large
+
+        >
+          mdi-youtube
+        </v-icon>
+      </nuxt-link>
+
+      <v-toolbar-title
+        class="mr-12 white--text align-center">
+        <span class="title">
+          Ami
+        </span>
       </v-toolbar-title>
+
       <v-spacer></v-spacer>
+
       <v-row
         align="center"
         style="max-width: 650px"
@@ -92,12 +101,17 @@ export default {
   props: {
     source: String,
   },
+  method: {
+    tohome() {
+      this.$router.push('/')
+    }
+  },
   data: () => ({
     drawer: null,
     items: [
-      {icon: 'mdi-trending-up', text: '热播',path:"/popular"},
+      {icon: 'mdi-trending-up', text: '热播', path: "/popular"},
 
-      {icon: 'mdi-history', text: '看过',path:"history"},
+      {icon: 'mdi-history', text: '看过', path: "history"},
 
     ],
     items2: [
@@ -128,3 +142,8 @@ export default {
 
 }
 </script>
+<style>
+.nuxt-link-active {
+  text-decoration: none;
+}
+</style>

@@ -3,18 +3,11 @@
   <v-container class="grey lighten-5">
     <v-row>
       <v-col>
-        <v-list
-          :disabled="disabled"
-
-          three-line
-          :flat="flat"
-          :subheader="subheader"
-          :sub-group="subGroup"
-          :nav="nav"
-          :avatar="avatar"
-
+        <v-card
+          class="mx-auto"
         >
-          <v-list-item-group v-model="item" color="primary">
+
+
             <v-list-item
               :inactive="inactive"
             >
@@ -38,8 +31,9 @@
 
 
             </v-list-item>
-          </v-list-item-group>
-        </v-list>
+
+
+        </v-card>
       </v-col>
     </v-row>
 

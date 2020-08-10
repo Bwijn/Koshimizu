@@ -27,7 +27,7 @@
 import Logo from '~/components/Logo.vue'
 import VuetifyLogo from '~/components/VuetifyLogo.vue'
 import card from '~/components/card.vue'
-
+import axios from 'axios'
 export default {
   data(){
     return{
@@ -38,6 +38,11 @@ export default {
     Logo,
     VuetifyLogo,
     card,
-  }
+  },
+  // async asyncData({ params }) {
+  //   const { data } = await axios.get(`https://1`)
+  //   console.log(data)
+  //   return { title: data.title }
+  // }
 }
 </script>
