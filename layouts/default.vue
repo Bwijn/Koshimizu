@@ -70,6 +70,7 @@
         class="mr-12 white--text align-center">
         <span class="title">
           Ami
+          <!--          小清水日语罗马音-->
         </span>
       </v-toolbar-title>
 

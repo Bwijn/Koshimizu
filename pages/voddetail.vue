@@ -5,32 +5,36 @@
       <v-col>
         <v-card
           class="mx-auto"
+
         >
 
 
-            <v-list-item
-              :inactive="inactive"
-            >
-              <v-list-item-avatar
-                tile
-                height="200"
-                width="150"
-                v-if="avatar">
+          <v-list-item
+            :inactive="inactive"
+          >
+            <v-list-item-avatar
+              tile
+              @click="$router.push('/player')"
+              style=" cursor: pointer; "
+              height="200"
+              width="150"
+              v-if="avatar">
 
-                <v-img :src="items[0].avatar"></v-img>
-              </v-list-item-avatar>
+              <v-img
+                :src="this.info.cover"></v-img>
+            </v-list-item-avatar>
 
-              <v-list-item-content>
+            <v-list-item-content>
 
-                <v-list-item-title v-html="items[0].title"></v-list-item-title>
-                <v-list-item-subtitle v-if="threeLine" >主演：{{items[0].Starring}}</v-list-item-subtitle>
-                <v-list-item-subtitle v-if="threeLine" >简介：{{items[0].subtitle}}</v-list-item-subtitle>
-                <v-list-item-subtitle v-if="threeLine" >分类：日剧  地区：日本  年份：2020  更新：08.06</v-list-item-subtitle>
+              <v-list-item-title v-html="this.info.title"></v-list-item-title>
+              <v-list-item-subtitle v-if="threeLine">主演：堺雅人</v-list-item-subtitle>
+              <v-list-item-subtitle v-if="threeLine">简介：{{ this.info.brief }}</v-list-item-subtitle>
+              <v-list-item-subtitle v-if="threeLine">分类：日剧 地区：日本 年份：2020 更新：08.06</v-list-item-subtitle>
 
-              </v-list-item-content>
+            </v-list-item-content>
 
 
-            </v-list-item>
+          </v-list-item>
 
 
         </v-card>
@@ -50,7 +54,7 @@ export default {
       {
         avatar: 'https://tu.tianzuida.com/pic/upload/vod/2020-07-30/202007301596068146.jpg',
         title: '龙道 双面复仇者',
-        Starring:"玉木宏 高桥一生 松本穗香 远藤宪一 齐藤由贵 细田",
+        Starring: "玉木宏 高桥一生 松本穗香 远藤宪一 齐藤由贵 细田",
         subtitle: "玉木饰演混入黑道的哥哥龙一，高桥饰演掌握职权的国土交通省官僚弟弟龙二。本剧讲述了二人为了替被快递公司社长逼死的养父母复仇雪恨的故事",
       },
       {
@@ -87,6 +91,15 @@ export default {
     avatar: true,
     rounded: false,
   }),
+
+  async asyncData({params, $axios}) {
+    // console.log('PPPPPPPPPPPPPPPOOOOOOOOOOOOO')
+    const {data} = await $axios.get(`/video/1`)
+    // console.log(data);
+    return {
+      info: data
+    }
+  },
   components: {}
 }
 </script>

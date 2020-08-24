@@ -2,7 +2,7 @@
 
   <v-container class="grey lighten-5">
 
-    <v-row v-for="n in 2"
+    <v-row v-for="n in 1"
            :key="n"
            class="mb-6"
            no-gutters
@@ -13,7 +13,7 @@
         class="mb-6">
 
         <card
-:yyy="yyy"
+          :datalist="info"
         >
         </card>
 
@@ -27,22 +27,32 @@
 import Logo from '~/components/Logo.vue'
 import VuetifyLogo from '~/components/VuetifyLogo.vue'
 import card from '~/components/card.vue'
-import axios from 'axios'
+// import axios from 'axios'
+
 export default {
-  data(){
-    return{
-      yyy:"/voddetail"
+  data() {
+    return {
+      // data: null
+      // OO:"PPP{}{}{}"
     }
+  },
+  created() {
+    console.log("Created DATA", this.data,)
+    console.log("Created INFO", this.info,)
   },
   components: {
     Logo,
     VuetifyLogo,
     card,
   },
-  // async asyncData({ params }) {
-  //   const { data } = await axios.get(`https://1`)
-  //   console.log(data)
-  //   return { title: data.title }
-  // }
+
+  async asyncData({params, $axios}) {
+    console.log('PPPPPPPPPPPPPPPOOOOOOOOOOOOO')
+    // const {data} = await $axios.get(`/video/1`)
+    return {
+      info: {cover:"111"}
+    }
+  }
+
 }
 </script>

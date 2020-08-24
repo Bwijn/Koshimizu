@@ -1,6 +1,6 @@
 <template>
   <v-card
-:to="yyy"
+    to="/voddetail"
     max-width="200"
 
     class="ma-auto"
@@ -14,7 +14,7 @@
     </v-list-item>
 
     <v-img
-      src="https://www.yunbtv.com/upload/vod/20200720-1/7a6d8eff7a62cb51e287aabd308b7ded.jpg"
+      :src="datalist.cover"
       height="192"
     ></v-img>
 
@@ -28,7 +28,14 @@
 <script>
 
 export default {
-  name:'card',
-  props:["yyy"]
+  name: 'card',
+  props: ["datalist"],
+  created() {
+    // console.log(this.datalist)
+
+
+  },
+
+
 }
 </script>

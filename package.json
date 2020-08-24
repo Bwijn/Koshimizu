@@ -11,7 +11,10 @@
   "dependencies": {
     "@nuxtjs/axios": "^5.12.1",
     "axios": "^0.19.2",
-    "nuxt": "^2.14.0"
+    "dplayer": "^1.26.0",
+    "nuxt": "^2.14.0",
+    "videojs-contrib-hls": "^5.15.0",
+    "vue-video-player": "^5.0.2"
   },
   "devDependencies": {
     "@nuxtjs/vuetify": "^1.11.2"

@@ -64,6 +64,11 @@ export default {
     credentials: true,
     proxy: true
   },
+  proxy:
+    {
+      changeOrigin: true, // 表示是否跨域
+      '/api': 'http://127.0.0.1:8000'
+    },
   /*
   ** vuetify module configuration
   ** https://github.com/nuxt-community/vuetify-module
