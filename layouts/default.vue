@@ -27,9 +27,9 @@
         <v-list>
           <v-list-item
 
-            v-for="item in items2"
+            v-for="(item, i) in items2"
             :to="item.path"
-            :key="item.text"
+            :key="i"
             link
           >
             <v-list-item-avatar>
@@ -87,6 +87,7 @@
           append-icon="mdi-magnify"
           color="white"
           hide-details
+          @keydown.ente="this.toResult()"
         ></v-text-field>
       </v-row>
     </v-app-bar>
@@ -105,6 +106,11 @@ export default {
   method: {
     tohome() {
       this.$router.push('/')
+    },
+
+    toResult(context) {
+      // this.$axios.$get("/searchPP")
+      alert(111111111);
     }
   },
   data: () => ({

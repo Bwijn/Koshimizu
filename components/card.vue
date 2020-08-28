@@ -1,15 +1,15 @@
 <template>
   <v-card
-    to="/voddetail"
+    :to="{ path: '/voddetail/'+ datalist.id ,}"
     max-width="200"
-
+    height="33vh"
     class="ma-auto"
   >
     <v-list-item>
 
       <v-list-item-content>
-        <v-list-item-title>半泽直树2</v-list-item-title>
-        <v-list-item-subtitle>更新至第3集</v-list-item-subtitle>
+        <v-list-item-title>{{ datalist.title }}</v-list-item-title>
+        <!--        <v-list-item-subtitle>{{datalist.brief}}</v-list-item-subtitle>-->
       </v-list-item-content>
     </v-list-item>
 
@@ -18,9 +18,9 @@
       height="192"
     ></v-img>
 
-    <v-card-text>
-      Visit ten places on our planet that are undergoing the biggest changes today.
-    </v-card-text>
+    <!--    <v-card-text>-->
+    <!--      {{datalist.brief}}-->
+    <!--    </v-card-text>-->
 
 
   </v-card>
