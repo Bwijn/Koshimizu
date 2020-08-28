@@ -87,7 +87,7 @@
           append-icon="mdi-magnify"
           color="white"
           hide-details
-          @keydown.ente="this.toResult()"
+          @keyup="show($event)"
         ></v-text-field>
       </v-row>
     </v-app-bar>
@@ -103,14 +103,16 @@ export default {
   props: {
     source: String,
   },
-  method: {
+  methods: {
     tohome() {
       this.$router.push('/')
     },
 
-    toResult(context) {
-      // this.$axios.$get("/searchPP")
-      alert(111111111);
+    show(ev) {
+      if (ev.key === 'Enter') {
+        console.log(ev);
+        this.$router.push("/search?");
+      }
     }
   },
   data: () => ({
