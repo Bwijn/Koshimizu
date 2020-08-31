@@ -1,5 +1,5 @@
 <template>
-  <v-app>
+<!--  <v-app>-->
     <div
       v-if="videoLoaded"
       class="video-player-box"
@@ -10,7 +10,7 @@
       @statechanged="playerStateChanged($event)"
       v-video-player:myVideoPlayer="playerOptions">
     </div>
-  </v-app>
+<!--  </v-app>-->
 </template>
 <script>
 // 一下是 SSR -------------------------------------------

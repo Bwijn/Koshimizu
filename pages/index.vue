@@ -2,13 +2,13 @@
 
   <v-container class="grey lighten-5">
 
-    <v-row v-for="(n,i) in 1"
-           :key="n"
+    <v-row v-for="(inst,i) in 1"
+           :key="i"
            class="mb-6"
            no-gutters
     >
       <v-col
-        v-for="(n,i) in items"
+        v-for="(n,i) in $store.state.index_items"
         :key="i"
         class="mb-6">
 
@@ -30,9 +30,7 @@ import card from '~/components/card.vue'
 
 export default {
   data() {
-    return {
-
-    }
+    return {}
   },
   components: {
     Logo,
@@ -40,12 +38,17 @@ export default {
     card,
   },
 
-  async asyncData({params, $axios}) {
-    const {data} = await $axios.get(`/vindex`)
-    return {
-      items: data
-    }
+  async fetch({store,$axios}) {
+
+    return await $axios.$get("/vindex").then(res => {
+      console.log("VINDEX RES", res);
+      store.commit('fill_items',res)
+    })
+    // console.log('vindex',$axios);
+    // store.commit('fill_items')
+
   }
+
 
 }
 </script>

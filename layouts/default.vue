@@ -81,41 +81,44 @@
         style="max-width: 650px"
       >
         <v-text-field
-          :append-icon-cb="() => {}"
-          placeholder="搜索. . ."
-          single-line
           append-icon="mdi-magnify"
           color="white"
           hide-details
+          label="按回车搜索结果..."
           @keyup="show($event)"
+          v-model="searchbar"
         ></v-text-field>
       </v-row>
     </v-app-bar>
 
     <v-main>
-      <nuxt></nuxt>
+      <nuxt-child></nuxt-child>
     </v-main>
   </v-app>
 </template>
 
 <script>
+
+
 export default {
+  // watchQuery: true, // 查询参数改变时重新asyncData
+
   props: {
     source: String,
   },
   methods: {
-    tohome() {
-      this.$router.push('/')
-    },
 
-    show(ev) {
+
+     show(ev) {
       if (ev.key === 'Enter') {
-        console.log(ev);
-        this.$router.push("/search?");
+
+        this.$router.push({path: "/search/", query: {content: this.searchbar}})
       }
     }
   },
   data: () => ({
+    searchbar: '',
+    ss:true,
     drawer: null,
     items: [
       {icon: 'mdi-trending-up', text: '热播', path: "/popular"},
