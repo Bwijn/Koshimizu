@@ -17,4 +17,7 @@ $ npm run start
 $ npm run generate
 ```
 
-For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
+### 项目展示
+![RUNOOB 图标](home.png "RUNOOB")
+
+
